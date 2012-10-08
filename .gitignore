@@ -2,3 +2,4 @@ node_modules
 *~
 *.py[co]
 .emacs*
+mozilla.pdf

@@ -635,3 +635,90 @@ pre.prettyprint span.highlight {
     margin-top: 0.6em;
     font-size: 5em;
 }
+
+@media print {
+    .deck-container > section {
+        page-break-after: always;
+        page-break-before: always;
+        page-break-inside: avoid;
+        display: block !important;
+        width: 100% !important;
+        height: 9.60in !important;
+        overflow: hidden;
+        position: relative !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .presenter-notes {
+        display: none;
+    }
+
+    .deck-container {
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    .deck-container .slide {
+        background-color: white;
+    }
+
+    script {
+        display: none;
+    }
+
+    .slide {
+        visibility: visible !important;
+        -webkit-transform: none !important;
+        -moz-transform: none !important;
+        -o-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .deck-container .row .half.slide {
+        display: block;
+        width: 50%;
+        float: left;
+        margin: 0;
+    }
+
+    h1 {
+        -webkit-transform: none !important;
+        -moz-transform: none !important;
+        -o-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+        padding: 0 !important;
+        position: static !important;
+        margin-top: 4em !important;
+        margin-left: 0em !important;
+        margin-right: 0em !important;
+    }
+
+    /* special cases */
+    #title-slide h1 {
+        margin-top: 6em !important;
+    }
+
+    #theming ul {
+        list-style-type: disc;
+    }
+
+    #typography blockquote {
+        display: none;
+    }
+
+    #microsoft-internet-explorer h1 {
+        color: white;
+        height: 6em;
+        padding-top: 0.2em !important;
+        padding-left: 3em !important;
+        font-size: 3em;
+        background: url('../images/internet-explorer.png') top left no-repeat;
+    }
+}

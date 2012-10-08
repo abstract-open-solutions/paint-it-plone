@@ -81,3 +81,11 @@
 .deck-container .deck-presenter dl > dd.deck-presenter-notes {
     color: hsl(240, 30%, 20%);
 }
+
+
+
+@media print {
+    .presenter-notes {
+        display: none;
+    }
+}
