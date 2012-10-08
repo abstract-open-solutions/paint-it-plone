@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <title>Paint it Plone!</title>
+
+    <link rel="stylesheet" href="prettify/prettify.css">
+    <link rel="stylesheet" href="themes/paint-it-plone.css">
+
+    <script src="deck.js/modernizr.custom.js"></script>
+  </head>
+  <body class="deck-container">
+
+    <!-- Begin slides -->
+    <section id="title-slide" class="slide">
+      <h1>Paint it <img src="images/plone-logo-128.png" title="Plone" />!</h1>
+      <a href="http://www.flickr.com/photos/aidanmorgan/4299071361/"
+         title="Paints - John-Morgan" class="image-copy">
+        CC by 2.0 John-Morgan 2010
+      </a>
+      <aside class="presenter-notes">
+        <p>
+          Who I am, experience,
+          design more hobby than trade.
+        </p>
+        <p>
+          Talk Plone-oriented but easy to apply the same elsewhere
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="theming" class="slide">
+      <h2>Theming</h2>
+      <p><em>What is theming?</em></p>
+      <div class="row">
+        <div class="half slide">
+          <ul>
+            <li>Adding <em>decorations</em></li>
+            <li>Altering structure</li>
+            <li>Modifying user experience</li>
+          </ul>
+          <div class="presenter-notes">
+            <p>
+              Changing look <b>and</b> behavior,
+              and they might not be so cleanly separated.
+            </p>
+            <p>Coordinate.</p>
+            <p>Good sites <em>feel</em> good, don't just look good</p>
+          </div>
+        </div>
+        <div class="half slide">
+          <ul>
+            <li><em>CSS</em></li>
+            <li>Configuration, <em>Diazo</em></li>
+            <li><em>Diazo</em>, Programming</li>
+          </ul>
+          <div class="presenter-notes">
+            Be prepeared to deal with all of the above
+          </div>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+        Definition of theming is fuzzy
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Theming <small>The process</small></h2>
+      <ol>
+        <li>Mockups by designer</li>
+        <li>
+          <em>HTML</em> mockups
+          <ol>
+            <li><em>Widget library</em></li>
+          </ol>
+        </li>
+        <li>Integration with backend</li>
+      </ol>
+      <aside class="presenter-notes">
+        <p>Mockups may vary wildly in detail and format</p>
+        <p>HTML mockups are very important to get right</p>
+        <p>Widget library can be very important also</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Theming <small>The cast</small></h2>
+      <ol>
+        <li>Wireframe</li>
+        <li>Mockups</li>
+        <li>UX customizations</li>
+        <li>Static theme</li>
+        <li><em>Diazo</em> rules</li>
+        <li>Custom templates</li>
+      </ol>
+      <aside class="presenter-notes">
+        <p>All the components that end up "making" a theme.</p>
+        <p>
+          You might not have all of them,
+          important to have them in order.
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="dawn-of-a-design" class="slide">
+      <h1>Dawn of a design</h1>
+      <a href="http://www.flickr.com/photos/woodlouse/3991271104"
+         title="dawn from Mount Meru, Tanzania - Woodlouse" class="image-copy">
+        CC by SA 2.0 Woodlouse 2008
+      </a>
+      <aside class="presenter-notes">
+        How a design starts up, most common cases,
+        how to judge if a design is well done
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>The dawn of a design</h2>
+      <div class="row">
+        <div class="half slide">
+          <h3>Good</h3>
+          <ul>
+            <li>Wireframes</li>
+            <li>Mockups with specs</li>
+            <li>Modular design</li>
+          </ul>
+          <div class="presenter-notes">
+            <p>
+              It's important that a mockup
+              is more than just a pretty image.
+            </p>
+            <p>It has to be thought.</p>
+            <p>Also, Plone's not Twitter, design should be modular</p>
+          </div>
+        </div>
+        <div class="half slide">
+          <h3>Bad</h3>
+          <ul>
+            <li>Printed stuff</li>
+            <li>No specs</li>
+            <li>No patterns</li>
+          </ul>
+          <div class="presenter-notes">
+            <p>Printed stuff in landscape is the worst.</p>
+            <p>
+              There must be a "regularity" or pattern
+              in the proportions of the elements.
+            </p>
+          </div>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+        Different types of inputs you are working on.
+        Printed vs photoshop or vectorial.
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Ratio</h2>
+      <blockquote>
+        The relationship in quantity, amount,
+        or size between two or more things
+        <small>&mdash; <em>Definition of ratio</em></small>
+      </blockquote>
+      <p>
+        Web pages have to adapt
+        to <strong>different sizes and resolutions</strong>,
+        making <strong>absolute measurement very difficult</strong>.
+        But you can try
+        to <strong>maintain a pattern with proportions</strong>,
+        which is fundamental for:
+      </p>
+      <ul>
+        <li>Legibility</li>
+        <li>Usability</li>
+        <li>Aesthetics</li>
+      </ul>
+      <aside class="presenter-notes">
+        <p>
+          With something as fluid as HTML,
+          proportions are what matters,
+          not fixed values.
+        </p>
+        <p>Always reason in terms of proportions and how to vary them</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>What to measure</h2>
+      <ol>
+        <li>Font sizes (headings and normal text)</li>
+        <li>Paddings, margins, interlines</li>
+        <li><em>Elements</em></li>
+        <li>Lines (borders, graphic signs, etc)</li>
+      </ol>
+      <aside class="presenter-notes">
+        <p>
+          Start measuring font sizes and implement them,
+          and then try to map every other measure
+          into proportions of the above.
+        </p>
+        <p>Careful with line heights, margins, etc.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>I forgot my phone!</h2>
+      <div class="iphone-wrapper">
+        <div>
+          <p>
+            It's not necessary to start your design
+            with mobile experience in mind, but it helps.
+          </p>
+          <p>
+            However,
+            it's not possible to entirely delegate the mobile experience
+            to implementation time,
+            you need to go back to the drawing board for that.
+          </p>
+          <p>
+            <em>Progressive enhancement</em> currently
+            <a href="http://scottjehl.github.com/CSS-Download-Tests/">
+              doesn't perform so well
+            </a>
+          </p>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+        <p>One must offer a satisfactory mobile experience.</p>
+        <p>There must be atleast a basic idea on how to do that.</p>
+        <p>We'll get back to that later on.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Playing with blocks</h2>
+      <p><strong>Do not focus on decorations</strong></p>
+      <p>Instead focus on typography, elements,
+        and make something that works well with
+        no decorations and in black & white.</p>
+      <p><strong>Colors and graphics elements enhance the experience,
+          they cannot create it alone</strong></p>
+      <aside class="presenter-notes">
+        <p>
+          The implementation of a design should initially focus on blocks,
+          proportion, typography.
+        </p>
+        <p>Decorations can be added later.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="typography" class="slide">
+      <h1>Typography</h1>
+      <blockquote>
+        <p>
+          And much of what I stumbled into by following my curiosity and
+          intuition turned out to be priceless later on. Let me give you one
+          example: Reed College at that time offered perhaps the best
+          calligraphy instruction in the country. Throughout the campus every
+          poster, every label on every drawer, was beautifully hand
+          calligraphed. Because I had dropped out and didn’t have to take the
+          normal classes, I decided to take a calligraphy class to learn how to
+          do this. I learned about serif and san serif typefaces, about varying
+          the amount of space between different letter combinations, about what
+          makes great typography great. It was beautiful, historical,
+          artistically subtle in a way that science can’t capture, and I found
+          it fascinating.
+        </p>
+        <p>
+          None of this had even a hope of any practical application in my
+          life. But ten years later, when we were designing the first Macintosh
+          computer, it all came back to me. And we designed it all into the
+          Mac. It was the first computer with beautiful typography. If I had
+          never dropped in on that single course in college, the Mac would have
+          never had multiple typefaces or proportionally spaced fonts.
+        </p>
+      </blockquote>
+      <aside class="presenter-notes">
+        <p>Typography is harder than you thought.</p>
+        <p>
+          It was complex back in the print days,
+          and got even more complex with computer and screens
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Johannes' legacy</h2>
+      <dl>
+        <dt>Fun fact</dt>
+        <dd>
+          Gutenberg's Bible is still one of the pinnacles
+          of the art of typography,
+          being one of the very few printed books
+          that can rival with carefully handcrafted books
+          (as done by scribes) in terms of beauty.
+        </dd>
+      </dl>
+      <p>Screen typography is even harder:</p>
+      <ul>
+        <li>Hinting is crucial</li>
+        <li>Hinting is boring and hard</li>
+        <li>Many free fonts are not well hinted</li>
+        <li>Font rendering systems vary wildly</li>
+      </ul>
+      <aside class="presenter-notes">
+        <p>On (low-density) screens, hinting is uber-important</p>
+        <p>Very few free fonts are well hinted</p>
+        <p>
+          Rendering algorythms vary wildly between OSes,
+          browsers, and versions of browsers (beware of IE&lt;9)
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="getting-text-wrong" class="slide">
+      <h2>Getting text wrong</h2>
+      <div class="row">
+        <div class="half slide">
+          <h3>Bad</h3>
+          <div id="getting-text-wrong-bad">
+            <p>
+              Fusce pulvinar justo <strong>inantetristiquevitae</strong>
+              porta nisi elementum.
+              In ipsum quam, suscipit velpellentesque a, porttitor tempus mi.
+              Aliquam at orcilobortis <em>metus venenatis facilisis</em>.
+            </p>
+            <ul>
+              <li>
+                Nulla nisl sapien, elementum eu lobortis a,
+                auctor sit amet nunc.
+              </li>
+              <li>
+                Proin urna nulla, imperdietinplacerateu,
+                vehicula sit amet neque.
+              </li>
+            </ul>
+            <h4>Lorem ipsum dolor</h4>
+            <img src="images/example.jpg" class="float-left" />
+            <p>
+              Integer mollis, <em>augue et molestie rutrum</em>,
+              lorem velit fringilla ipsum,
+              eget pellentesque tortor purus eu enim.
+            </p>
+            <p>
+              Vestibulum ante ipsum primis in faucibus orci luctus
+              et ultrices posuere cubilia <em>Curae</em>;
+              <strong>Nam nunc diam</strong>,
+              pellentesque eget eleifend sed, consectetur nec felis.
+              Ut ac felis nisi.
+            </p>
+          </div>
+          <p class="presenter-notes">
+            Justified text, no hypenation, inconsistent spacing,
+            long long lines.
+          </p>
+        </div>
+        <div class="half slide">
+          <h3>Good</h3>
+          <div id="getting-text-wrong-good">
+            <p>
+              Fusce pulvinar justo <strong>inantetristiquevitae</strong>
+              porta nisi elementum.
+              In ipsum quam, suscipit velpellentesque a, porttitor tempus mi.
+              Aliquam at orcilobortis <em>metus venenatis facilisis</em>.
+            </p>
+            <ul>
+              <li>
+                Nulla nisl sapien, elementum eu lobortis a,
+                auctor sit amet nunc.
+              </li>
+              <li>
+                Proin urna nulla, imperdietinplacerateu,
+                vehicula sit amet neque.
+              </li>
+            </ul>
+            <h4>Lorem ipsum dolor</h4>
+            <img src="images/example.jpg" class="float-left" />
+            <p>
+              Integer mollis, <em>augue et molestie rutrum</em>,
+              lorem velit fringilla ipsum,
+              eget pellentesque tortor purus eu enim.
+            </p>
+            <p>
+              Vestibulum ante ipsum primis in faucibus orci luctus
+              et ultrices posuere cubilia <em>Curae</em>;
+              <strong>Nam nunc diam</strong>,
+              pellentesque eget eleifend sed, consectetur nec felis.
+              Ut ac felis nisi.
+            </p>
+          </div>
+          <div class="presenter-notes">
+            <p>Ensure correct spacing, contrast, legibility.</p>
+            <p>Avoid long rows (LaTeX docet)</p>
+          </div>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+        Is very easy.
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Getting fonts wrong</h2>
+      <div class="row">
+        <div class="half slide">
+          <h3>Bad</h3>
+          <pre class="prettyprint lang-css">
+@font-face {
+    font-family: 'PTSansNarrowRegular';
+    src: url('PTN57F-webfont.eot');
+    src: url('PTN57F-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PTSansCaptionBold';
+    src: url('PTC75F-webfont.eot');
+    src: url('PTC75F-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PTSansCaptionRegular';
+    src: url('PTC55F-webfont.eot');
+    src: url('PTC55F-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+          </pre>
+        </div>
+        <div class="half slide">
+          <h3>Good</h3>
+          <pre class="prettyprint lang-css">
+@font-face {
+<span class="highlight">    font-family: 'PTSans';</span>
+    src: url('PTN57F-webfont.eot');
+    src: url('PTN57F-webfont.woff') format('woff');
+<span class="highlight">    font-weight: 200;</span>
+    font-style: normal;
+
+}
+
+@font-face {
+<span class="highlight">    font-family: 'PTSans';</span>
+    src: url('PTC75F-webfont.eot');
+    src: url('PTC75F-webfont.woff') format('woff');
+<span class="highlight">    font-weight: 700;</span>
+    font-style: normal;
+
+}
+
+@font-face {
+<span class="highlight">    font-family: 'PTSans';</span>
+    src: url('PTC55F-webfont.eot');
+    src: url('PTC55F-webfont.woff') format('woff');
+<span class="highlight">    font-weight: 400;</span>
+    font-style: normal;
+}
+          </pre>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+        <p>Is very easy (again).</p>
+        <p>FontSquirrel gets it wrong, Google gets it right.</p>
+        <p>Multiple definitions, pattern matching.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="grids" class="slide">
+      <h1>Grids</h1>
+      <a href="http://www.flickr.com/photos/editor/4667499812/"
+         title="Grid - Editor B" class="image-copy">
+        CC by 2.0 Editor B 2010
+      </a>
+      <aside class="presenter-notes">
+        <p>Grids simplify development and ensure consistency.</p>
+        <p>Use them, and make them responsive.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>What's a grid?</h2>
+      <p>A grid is:</p>
+      <ol>
+        <li>A creative constraint</li>
+        <li>The exoskeleton of the page</li>
+        <li>Something that helps in placing stuff</li>
+      </ol>
+      <aside class="presenter-notes">
+        <p>Creative constraints are very important</p>
+        <p>Foundations help achieving consistency</p>
+        <p>Placing stuff is not all</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>What grid?</h2>
+      <p><strong>Avoid</strong> fluid grids.</p>
+      <dl>
+        <dt>Obvious, recommended choice</dt>
+        <dd>The Deco grid system, Plone's builtin</dd>
+        <dt>More original choice</dt>
+        <dd>
+          Get a prebuilt one
+          (personal preferences:
+           <a href="http://cssgrid.net/">cssgrid</a>,
+           <a href="http://framelessgrid.com/">frameless</a>)
+        </dd>
+        <dt>Not-as-crazy-as-it-sounds choice</dt>
+        <dd>
+          Make your own
+        </dd>
+      </dl>
+      <aside class="presenter-notes">
+        <p>How to choose a grid: they shouldn't be fluid.</p>
+        <p>
+          No markup changes should occur to implement responsive,
+          no <em>proxying</em> required.
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Making your own</h2>
+      <p>You can make a grid that is also a <em>layout engine</em>.</p>
+      <p>
+        With a good starting point
+        (<a href="http://goldengridsystem.com/">Golden Grid System</a>)
+        it's not that hard.
+      </p>
+      <p>
+        When doing responsive design, not all layouts are possible
+        (a 16-column grid has <em>16!</em> possible layouts).
+      </p>
+      <p>Optimize/tweak only for the layouts you use.</p>
+      <aside class="presenter-notes">
+        <p>Golden grid system is a nice starting point</p>
+        <p>It's not that hard</p>
+        <p>Do not strive for completeness</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="css-preprocessors" class="slide">
+      <h1>CSS Preprocessors</h1>
+      <a href="http://www.flickr.com/photos/dsasso/9438258/"
+         title="typewriter - dsasso" class="image-copy">
+        CC by SA 2.0 dsasso 2005
+      </a>
+      <aside class="presenter-notes">
+        <p>CSS are powerful, but sometimes they can be very verbose</p>
+        <p>CSS preprocessors help you being less verbose and reusing more</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>LESS vs SASS</h2>
+      <div class="row">
+        <div class="half slide">
+          <h3>LESS</h3>
+          <ul>
+            <li class="good-point">
+              Easier to setup
+            </li>
+            <li class="good-point">
+              Works client side (great for development)
+            </li>
+            <li class="bad-point">
+              Lacks a couple features
+            </li>
+            <li class="bad-point">
+              <em>Javascript</em> & <em>node.js</em>
+            </li>
+          </ul>
+          <div class="presenter-notes">
+            <p>
+              LESS is easier to get started,
+              is great for development due to client-side mode.
+            </p>
+            <p>
+              Javascript tends to be hard to read,
+              compilers are hard, a compiler written in Javascript is...
+            </p>
+          </div>
+        </div>
+        <div class="half slide">
+          <h3>SASS</h3>
+          <ul>
+            <li class="good-point">
+              Feature complete
+            </li>
+            <li class="bad-point">
+              Slightly more difficult to set up
+            </li>
+            <li class="bad-point">
+              <em>Ruby</em>
+            </li>
+          </ul>
+          <div class="presenter-notes">
+            <p>SASS has every functionality, but is harder to set up.</p>
+            <p>I chose LESS because I know Javascript but not Ruby.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+        <p>No reference implementation in python.</p>
+        <p>
+          Non-reference implementation often lack behind
+          (small communities etc)
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>CSS vs LESS/SASS</h2>
+      <div class="row">
+        <div class="half slide">
+          <h3>CSS</h3>
+          <pre class="prettyprint lang-css">
+#header {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#header h1 {
+  color: #842210;
+  font-size: 26px;
+  font-weight: bold;
+}
+#header p {
+  font-size: 12px;
+  color: #111111;
+}
+#header p a {
+  text-decoration: none;
+}
+#header p a:hover {
+  border-width: 1px;
+}
+#footer {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+          </pre>
+        </div>
+        <div class="half slide">
+          <h3>LESS</h3>
+          <pre class="prettyprint lang-css">
+@darkred: #842210;
+@blackish: #111111;
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+#header {
+  .rounded-corners();
+  h1 {
+    color: @darkred;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 12px;
+    color: @blackish;
+    a {
+      text-decoration: none;
+      &:hover { border-width: 1px }
+    }
+  }
+}
+#footer { .rounded-corners(10px); }
+          </pre>
+          <div class="presenter-notes">
+            <p>
+              Actually longer by two lines,
+              but those are the variables.
+            </p>
+            <p>Reuse with mixins.</p>
+            <p>Nesting rocks.</p>
+            <p>Variables enhance tweakability.</p>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Owh, my brain</h2>
+      <div class="row">
+        <div class="half slide">
+          <h3>LESS</h3>
+          <pre class="prettyprint lang-css">
+.mixin1() {
+  @media all {
+    .tst {
+      color: black;
+      @media screen {
+        color: red;
+        .tst3 {
+          color: white;
+        }
+      }
+    }
+  }
+}
+.tst3 {
+  color: grey;
+}
+.mixin1();
+          </pre>
+        </div>
+        <div class="half slide">
+          <h3>CSS</h3>
+          <pre class="prettyprint lang-css">
+.tst3 {
+  color: grey;
+}
+@media all {
+  .tst {
+    color: black;
+  }
+}
+@media all and screen {
+  .tst {
+    color: red;
+  }
+  .tst .tst3 {
+    color: white;
+  }
+}
+          </pre>
+        </div>
+      </div>
+      <aside class="presenter-notes">
+        <p>Code example, how LESS/SASS can become hard to understand.</p>
+        <p>But they have debugging facilities.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Colors</h2>
+      <dl>
+        <dt>Question</dt>
+        <dd>
+          What is the hexadecimal value (<code>#XXXXXX</code>) for a dark,
+          desaturated yellow?
+        </dd>
+      </dl>
+      <p class="slide">
+        <em>Modern browsers</em> have <code>hsl()</code>
+        (<code>hsl(60, 30%, 30%);</code>).
+      </p>
+      <p class="slide">
+        <em>IE (6|7|8)</em>: What about <strong>us</strong>?
+      </p>
+      <p class="slide">
+        Using a CSS preprocessor helps:
+        <code>desaturate(darken(yellow, 30%), 30%);</code>
+      </p>
+      <aside class="presenter-notes">
+        <p>Dark yellow in RGB?</p>
+        <p>
+          use <code>hsl()</code> (only IE&gt;=9),
+          but preprocessors have facilities to
+          darken/lighten/saturate colors
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="microsoft-internet-explorer" class="slide">
+      <h1>Internet Explorer</h1>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Dissociative identity disorder</h2>
+      <p>
+        China is the only country still using <em>IE6</em> widely,
+        <strong>21.3%</strong> still use <em>IE6</em>
+        (source: <a href="http://ie6countdown.com/">ie6countdown.com</a>)
+      </p>
+      <table class="data">
+        <caption>Internet Explorer usage in 2012, by version</caption>
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>IE 9</th>
+            <th>IE 8</th>
+            <th>IE 7</th>
+            <th>IE 6</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Worldwide</td>
+            <td>15.22%</td>
+            <td>15.10%</td>
+            <td>2.15%</td>
+            <td>0.90%</td>
+          </tr>
+          <tr>
+            <td>Europe</td>
+            <td>14.79%</td>
+            <td>12.05%</td>
+            <td>1.70%</td>
+            <td>0.47%</td>
+          </tr>
+          <tr>
+            <td>North America</td>
+            <td>16.97%</td>
+            <td>12.05%</td>
+            <td>2.60%</td>
+            <td>0.62%</td>
+          </tr>
+          <tr>
+            <td>South America</td>
+            <td>11.45%</td>
+            <td>14.11%</td>
+            <td>1.42%</td>
+            <td>0.56%</td>
+          </tr>
+          <tr>
+            <td>Asia</td>
+            <td>10.85%</td>
+            <td>18.13%</td>
+            <td>2.40%</td>
+            <td>2.04% <small>(but 16.88% in China)</small></td>
+          </tr>
+          <tr>
+            <td>Africa</td>
+            <td>8.84%</td>
+            <td>12.43%</td>
+            <td>1.73%</td>
+            <td>1.53%</td>
+          </tr>
+          <tr>
+            <td>Oceania</td>
+            <td>20.79%</td>
+            <td>14.22%</td>
+            <td>1.76%</td>
+            <td>0.47%</td>
+          </tr>
+        </tbody>
+      </table>
+      <aside class="presenter-notes">
+        <p>
+          There are many IEs out there,
+          each with its own particular problems.
+        </p>
+        <p>IE9 has been out for more than a year.</p>
+        <p>Let's see what versions make sense to support</p>
+      </aside>
+      <a href="http://gs.statcounter.com/"
+         title="Browser market share" class="image-copy">
+        Percentage of total market, data by gs.statcounter.com
+      </a>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Bugs affecting IE</h2>
+      <table>
+        <caption>Internet Explorer bugs, by version</caption>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Bugs/missing features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6</td>
+            <td>
+              <p>
+                No <code>&gt;</code>, <code>+</code>,
+                <code>tag[attr="value"]</code>,
+                <code>position: fixed</code>,
+                buggy <code>.class1.class2</code>,
+                <code>:hover</code> only on links,
+                buggy <code>overflow: visible</code>.
+              </p>
+              <p>
+                No <code>(max|min)-(width|height)</code>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>
+              <p>
+                No <code>:before</code>, <code>:after</code>,
+                <code>:focus</code>,
+                buggy <code>:first-child</code>,
+                buggy <code>position: fixed</code>,
+                broken box model
+                and no way to have a border that doesn't take up space.
+              </p>
+              <p>
+                Also incomplete table styling
+                (forget about playing with borders)
+                and handling of whitespace.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>
+              <p>
+                No <em>CSS3</em> whatsoever,
+                including <code>:last-child</code>.
+              </p>
+              <p><em>Webfonts</em> look ugly.</p>
+              <p>
+                <code>:first-child</code>, <code>+</code>,
+                do not behave correctly when you add/remove elements
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>
+              Not substantially better or worse
+              than any other browser
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <aside class="presenter-notes">
+        <p>Not going into <em>Javascript</em> issues</p>
+        <p>IE9 is a modern browser</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>IE tricks</h2>
+      <p class="slide">
+        Use <em>modernizr.js</em> to include
+        <em>browser-specific optimizations</em>.
+      </p>
+      <p class="slide">
+        Use Javascript to add classes where you are missing selectors
+        (e.g. <code>:first-child</code> and <code>:last-child</code>).
+      </p>
+      <p class="slide">
+        Throw away borders for browsers with an incomplete box model.
+      </p>
+      <aside class="presenter-notes">
+        <p>
+          Conditional CSS and Javascripts,
+          adding class to last elements with <em>jQuery</em>
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="cutting-and-seaming" class="slide">
+      <h1>Cutting & Seaming</h1>
+      <a href="http://www.flickr.com/photos/lovelihood/5495154205/"
+         title="Tools of the shade - lovelihood" class="image-copy">
+        CC by SA 2.0 lovelihood 2010
+      </a>
+      <aside class="presenter-notes">
+        <p>Quickly: what is <em>Diazo</em></p>
+        <p>Not a silver bullet</p>
+        <p>
+          We will focus on how to make working with Diazo easier
+          by starting on the right path
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Models and policies</h2>
+      <p class="slide">
+        There are too many <em>page types</em>
+        for a designer to come up with a full mockup of each.
+      </p>
+      <p class="slide">
+        However, if you decompose each page in a <em>layout</em>
+        and a set of <em>widgets</em>,
+        things are easier to design and mock.
+      </p>
+      <p class="slide">
+        This also reminds me of something else that began with <em>D</em>.
+      </p>
+      <aside class="presenter-notes">
+        When to do full page templates and when to reuse bits
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Bootstrap <small>The lesson</small></h2>
+      <p class="slide">
+        <a href="http://twitter.github.com/bootstrap/index.html">
+          Bootstrap
+        </a> is more than a default set of <em>CSS</em>.
+      </p>
+      <p class="slide">
+        It provides a <strong>documented set of widgets</strong>,
+        where it's easy to pick the one that fits best
+        thanks to visual examples,
+        and just using the correct markup does the job.
+      </p>
+      <p class="slide">
+        And the whole system is coherent and cohesive,
+        allowing you to mix & match.
+      </p>
+      <aside class="presenter-notes">
+        Bootstrap is very useful for developers because of its doc,
+        not because the buttons are nice
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Bootstrap <small>The opportunity</small></h2>
+      <p class="slide">
+        <strong>Nothing</strong> prevents you to do what
+        <a href="http://twitter.github.com/bootstrap/index.html">
+          Bootstrap
+        </a> does.
+      </p>
+      <p class="slide">
+        Catalog and document all of your widgets in a static template,
+        and <code>plone.app.theming</code>
+        will serve it over the <code>++theme++</code>
+        traversal namespace.
+      </p>
+      <p class="slide">
+        It doesn't need to be as wide or as encompassing as
+        <a href="http://twitter.github.com/bootstrap/index.html">
+          Bootstrap
+        </a>, but it's a very good starting point.
+      </p>
+      <aside class="presenter-notes">
+        <p>Use static pages as a way to validate your work</p>
+        <p>Create pages that document all widgets a la bootstrap</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Useful CSS classes</h2>
+      <ul class="two-columns">
+        <li><code>.hiddenStructure</code></li>
+        <li><code>.selected</code></li>
+        <li>
+          <code>.portalMessage</code>
+          <ul>
+            <li><code>.info</code></li>
+            <li><code>.warning</code></li>
+            <li><code>.error</code></li>
+          </ul>
+        </li>
+        <li><code>.discreet</code></li>
+        <li>
+          Links
+          <ul>
+            <li><code>.link-plain</code></li>
+            <li><code>.link-anchor</code></li>
+            <li><code>.link-external</code></li>
+            <li><code>.link-category</code> (tags)</li>
+            <li><code>.link-overlay</code></li>
+          </ul>
+        </li>
+      </ul>
+      <aside class="presenter-notes">
+        <p>Use these classes in your static theme instead of custom ones.</p>
+        <p>Less work for <em>Diazo</em>.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Useful markup</h2>
+      <ul>
+        <li>Tables</li>
+        <li>Tabs</li>
+        <li>Portlets</li>
+        <li>Breadcrumbs</li>
+        <li>Navigation</li>
+        <li>Edit bar</li>
+      </ul>
+      <aside class="presenter-notes">
+        <p>Tabs, portlets, etc.</p>
+        <p>Again saves you the pain later on with <em>Diazo</em> rules.</p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Useful Javascript</h2>
+      <ul>
+        <li><a href="http://modernizr.com">modernizr</a></li>
+        <li><a href="http://jquery.com">jQuery</a></li>
+        <li>
+          <a href="http://jquerytools.org">jQueryTools</a>
+          (tabs, overlays)
+        </li>
+        <li>
+          <a href="http://jquery.com">jQueryUI</a>
+          (currently as add-on)
+        </li>
+      </ul>
+      <aside class="presenter-notes">
+        Prefer solutions based on this stuff
+        rather than solutions based on <em>$random-stuff</em>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Diazo tricks</h2>
+      <p>A few parts of Diazo often overlooked or misunderstood.</p>
+      <div class="row">
+        <div class="half slide">
+          <h3>Wrapping stuff</h3>
+          <pre class="prettyprint lang-xml">
+&lt;replace css:content="#my-content"&gt;
+  &lt;div id="my-wrapper" class="a-class"&gt;
+    &lt;div class="another-class"&gt;
+      &lt;xsl:apply-templates select="node()" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/replace&gt;
+          </pre>
+          <h3>if ... elif ... else</h3>
+          <pre class="prettyprint lang-xml">
+&lt;rules css:if-content="#foo"&gt; ... &lt;/rules&gt;
+&lt;rules css:if-content="#bar"&gt; ... &lt;/rules&gt;
+&lt;rules css:if-not-content="#foo, #bar"&gt; ... &lt;/rules&gt;
+          </pre>
+        </div>
+        <div class="half slide">
+          <h3><em>classA</em> is <em>classB</em></h3>
+          <pre class="prettyprint lang-xml">
+&lt;replace css:content=".classA"&gt;
+  &lt;xsl:copy select="node()"&gt;
+    &lt;xsl:attribute name="class"&gt;
+      &lt;xsl:value-of select="./@class" /&gt; classB
+    &lt;/xsl:attribute&gt;
+    &lt;xsl:apply-templates /&gt;
+  &lt;/xsl:copy&gt;
+&lt;/replace&gt;
+          </pre>
+          <h3>and</h3>
+          <pre class="prettyprint lang-xml">
+&lt;rules css:if-content="#foo"&gt;
+  &lt;rules css:if-content="#bar"&gt; ... &lt;/rules&gt;
+&lt;/rules&gt;
+          </pre>
+        </div>
+      </div>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Using jbot</h2>
+      <p>There are situations in which using <em>Diazo</em> is overkill.</p>
+      <p>
+        Then you shall use
+        <a href="http://pypi.python.org/pypi/z3c.jbot">jbot</a>.
+      </p>
+      <p>When to do that:</p>
+      <ol>
+        <li>When it's a small component.</li>
+        <li>
+          When it would require the use of advanced <em>XSLT</em>
+          to morph the original HTML.
+        </li>
+      </ol>
+      <aside class="presenter-notes">
+        When to use <em>jbot</em> and when to use <em>Diazo</em>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section id="conclusion" class="slide">
+      <h1>Conclusion</h1>
+      <a href="http://www.flickr.com/photos/meanestindian/2179957538/"
+         title="Road-side pulse - Meanest Indian" class="image-copy">
+        CC by 2.0 Meanest Indian 2008
+      </a>
+      <aside class="presenter-notes">
+        <p>Theming is not just a designer thing.</p>
+        <p>Theming is complex.</p>
+        <p>Communications between everyone involved is vital.</p>
+        <p>
+          Never settle for less than good,
+          because the user <strong>will</strong> notice.
+        </p>
+      </aside>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+
+    <section class="slide">
+      <h2>Questions?</h2>
+      <footer>
+        <span>Paint it Plone! &mdash; Simone Deponti for</span>
+        <a href="http://www.abstract.it" title="Abstract Open Solutions"
+           class="abstract-logo">Abstract</a>
+      </footer>
+    </section>
+    <!-- End slides -->
+
+    <!-- Responsive images: http://jquerypicture.com/ -->
+    <!-- Media queries: http://scottjehl.github.com/CSS-Download-Tests/ -->
+    <!-- http://www.w3.org/TR/css3-fonts/#font-matching-algorithm -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <div class="deck-presenter">
+      <a href="#" class="deck-presenter-button start">Start</a>
+      <dl>
+        <dt>Slides</dt>
+        <dd class="deck-status">
+            <span class="deck-status-current"></span>/<span class="deck-status-total"></span>
+        </dd>
+        <dt>Time remaining</dt>
+        <dd class="deck-presenter-remaining"></dd>
+        <dt>Notes</dt>
+        <dd class="deck-presenter-notes">
+          <p>No notes</p>
+        </dd>
+      </dl>
+    </div>
+
+    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+    <script src="deck.js/jquery-1.7.2.min.js"></script>
+    <script src="deck.js/core/deck.core.js"></script>
+    <script src="deck.js/extensions/menu/deck.menu.js"></script>
+    <script src="deck.js/extensions/status/deck.status.js"></script>
+    <script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+    <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="scripts/deck.presenter.js"></script>
+    <script src="prettify/prettify.js"></script>
+    <script src="prettify/lang-css.js"></script>
+    <script src="scripts/paint-it-plone.js"></script>
+  </body>
+</html>
